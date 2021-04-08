@@ -38,6 +38,7 @@ class BeersAdapter(private val context : Context, private val listBeers: Mutable
         Picasso.with(context)
             .load(listBeers[position].imageUrl)
             .placeholder(R.drawable.progress_animation)
+            .error(R.mipmap.ic_launcher)
             .into(binding.ivBeer)
     }
 

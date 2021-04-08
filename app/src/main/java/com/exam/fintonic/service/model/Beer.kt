@@ -21,28 +21,28 @@ data class Beer(
     val imageUrl: String? = null,
 
     @SerializedName("abv")
-    val abv: Float,
+    val abv: Float? = null,
 
     @SerializedName("ibu")
-    val ibu: Float,
+    val ibu: Float? = null,
 
     @SerializedName("target_fg")
-    val targetFg: Float,
+    val targetFg: Float? = null,
 
     @SerializedName("target_og")
-    val targetOg: Float,
+    val targetOg: Float? = null,
 
     @SerializedName("ebc")
-    val ebc: Float,
+    val ebc: Float? = null,
 
     @SerializedName("srm")
-    val srm: Float,
+    val srm: Float? = null,
 
     @SerializedName("ph")
-    val ph: Float,
+    val ph: Float? = null,
 
     @SerializedName("attenuation_level")
-    val attenuationLevel: Float,
+    val attenuationLevel: Float? = null,
 
     @SerializedName("volume")
     val volume: Volume? = null,
@@ -65,4 +65,7 @@ data class Beer(
 
     @SerializedName("contributed_by")
     val contributedBy: String? = null
-)
+
+) {
+    var foodDataBase: String? = null
+}

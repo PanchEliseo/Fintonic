@@ -12,7 +12,11 @@
         tools:layout="@layout/beers_fragment">
         <action
             android:id="@+id/action_beersFragment_to_detailBeer"
-            app:destination="@id/detailBeer" />
+            app:destination="@id/detailBeer">
+            <argument android:name="@string/data_base"
+                app:argType="boolean"
+                android:defaultValue="false"/>
+        </action>
     </fragment>
     <fragment
         android:id="@+id/detailBeer"

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Fintonic</string>
+    <string name="data_base">isDataBase</string>
 </resources>
