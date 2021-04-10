@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Fintonic</string>
     <string name="data_base">isDataBase</string>
+    <string name="tag_line_label">TagLine:</string>
+    <string name="description_label">Description:</string>
+    <string name="date_label">Date:</string>
+    <string name="food_pairing_label">Food Pairing:</string>
 </resources>

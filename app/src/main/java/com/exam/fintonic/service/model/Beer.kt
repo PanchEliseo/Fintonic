@@ -67,5 +67,5 @@ data class Beer(
     val contributedBy: String? = null
 
 ) {
-    var foodDataBase: String? = null
+    var foodDataBase: String = ""
 }

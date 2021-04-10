@@ -77,10 +77,10 @@ class BeersFragment : Fragment(), ClickItemList {
     override fun clickButtons(view: View, position: Int, list: MutableList<Beer>) {
         modelDetail.select(list[position])
         modelDetail.setList(list)
-        //val action = BeersFragmentDirections.actionBeersFragmentToDetailBeer(isDataBase)
-        //findNavController().navigate(action)
-        val bundle = bundleOf("isDataBase" to isDataBase)
-        findNavController().navigate(R.id.action_beersFragment_to_detailBeer, bundle)
+        val action = BeersFragmentDirections.actionBeersFragmentToDetailBeer(isDataBase)
+        findNavController().navigate(action)
+        //val bundle = bundleOf("isDataBase" to isDataBase)
+        //findNavController().navigate(R.id.action_beersFragment_to_detailBeer, bundle)
     }
 
     private fun setListeners() {
@@ -161,13 +161,6 @@ class BeersFragment : Fragment(), ClickItemList {
         val databaseHandler = FeedReaderDbHelper(requireContext())
         listBeers = databaseHandler.getBeers()
         databaseHandler.close()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        adapter = null
-        rvBeers.adapter = null
-        rvBeers.layoutManager = null
     }
 
 }

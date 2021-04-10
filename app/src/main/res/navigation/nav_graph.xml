@@ -13,9 +13,6 @@
         <action
             android:id="@+id/action_beersFragment_to_detailBeer"
             app:destination="@id/detailBeer">
-            <argument android:name="@string/data_base"
-                app:argType="boolean"
-                android:defaultValue="false"/>
         </action>
     </fragment>
     <fragment
@@ -23,6 +20,11 @@
         android:name="com.exam.fintonic.beers.DetailBeerFragment"
         android:label="DetailBeer"
         tools:layout="@layout/detail_fragment"
-        />
+        >
+        <argument
+            android:name="isDataBase"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
 
 </navigation>

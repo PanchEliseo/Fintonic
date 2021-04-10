@@ -19,6 +19,7 @@ class DetailBeerFragment : Fragment() {
     var beer: Beer? = null
     var isDataBase = false
     private val viewModel: DetailViewModel by activityViewModels()
+    val args : DetailBeerFragmentArgs by navArgs()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -27,7 +28,8 @@ class DetailBeerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        isDataBase = arguments?.getBoolean("isDataBase")!!
+        //isDataBase = arguments?.getBoolean("isDataBase")!!
+        isDataBase = args.isDataBase
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -41,20 +43,21 @@ class DetailBeerFragment : Fragment() {
     private fun setView(){
         (activity as AppCompatActivity).supportActionBar?.title = beer!!.name
         downloadImage()
-        val tag = "Tagline: ${beer!!.tagline}"
+        val tag = "${requireContext().getString(R.string.tag_line_label)} ${beer!!.tagline}"
         tvTagLine.text = tag
-        val description = "Description: ${beer!!.description}"
+        val description = "${requireContext().getString(R.string.description_label)} ${beer!!.description}"
         tvDescription.text = description
-        val date = "Date: ${beer!!.firstBrewed}"
+        val date = "${requireContext().getString(R.string.date_label)} ${beer!!.firstBrewed}"
         tvDate.text = date
-        if (isDataBase){
-            tvFood.text = beer!!.foodDataBase
-        } else {
+        if (beer!!.foodPairing != null){
             var food = ""
             for(data in beer!!.foodPairing!!){
                 food += "$data "
             }
-            val foodPairing = "Food Pairing: $food"
+            val foodPairing = "${requireContext().getString(R.string.food_pairing_label)} $food"
+            tvFood.text = foodPairing
+        } else {
+            val foodPairing = "${requireContext().getString(R.string.food_pairing_label)} ${beer!!.foodDataBase}"
             tvFood.text = foodPairing
         }
     }
