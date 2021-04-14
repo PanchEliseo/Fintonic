@@ -3,8 +3,8 @@ package com.exam.fintonic.beers
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.exam.fintonic.service.BeersRepository
-import com.exam.fintonic.service.ListBeers
+import com.exam.fintonic.service.repository.BeersRepository
+import com.exam.fintonic.service.model.ListBeers
 import com.exam.fintonic.service.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

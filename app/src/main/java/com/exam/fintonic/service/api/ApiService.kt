@@ -1,4 +1,4 @@
-package com.exam.fintonic.service
+package com.exam.fintonic.service.api
 
 import com.exam.fintonic.service.model.Beer
 import retrofit2.Response

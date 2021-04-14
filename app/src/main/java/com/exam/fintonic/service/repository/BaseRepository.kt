@@ -1,7 +1,7 @@
-package com.exam.fintonic.service
+package com.exam.fintonic.service.repository
 
-import retrofit2.HttpException
-import retrofit2.Response
+import com.exam.fintonic.service.api.ApiManagerFactory
+import com.exam.fintonic.service.ResponseHandler
 
 open class BaseRepository {
 

@@ -6,7 +6,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
-import com.exam.fintonic.service.model.Beer
+import com.exam.fintonic.service.model.*
 
 class FeedReaderDbHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
@@ -102,9 +102,10 @@ class FeedReaderDbHelper(context: Context): SQLiteOpenHelper(context, DATABASE_N
                 val beerFoodPairing = cursor.getString(cursor.getColumnIndex("foodPairing"))
                 val beerImageUrl = cursor.getString(cursor.getColumnIndex("imageUrl"))
                 val beer = Beer(id = idBeer, name = beerName, tagline = beerTagLine, description = beerDescription,
-                firstBrewed = beerFirstBrewed, imageUrl = beerImageUrl, foodPairing = null, abv = null,
-                ibu = null, targetFg = null, targetOg = null, ebc = null, srm = null, ph = null, attenuationLevel = null,
-                volume = null, boilVolume = null, method = null, ingredients = null, brewersTips = null, contributedBy = null)
+                firstBrewed = beerFirstBrewed, imageUrl = beerImageUrl, foodPairing = arrayListOf(), abv = 0F,
+                ibu = 0F, targetFg = 0F, targetOg = 0F, ebc = 0F, srm = 0F, ph = 0F, attenuationLevel = 0F,
+                volume = Volume(), boilVolume = BoilVolume(), method = Method(), ingredients = Ingredients(), 
+                brewersTips = "", contributedBy = "")
                 beer.foodDataBase = beerFoodPairing
                 beersList.add(beer)
             } while (cursor.moveToNext())

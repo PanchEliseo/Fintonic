@@ -7,64 +7,64 @@ data class Beer(
     @SerializedName("id")
     var id: Int = 0,
     @SerializedName("name")
-    var name: String? = null,
+    var name: String = "",
     @SerializedName("tagline")
-    val tagline: String? = null,
+    val tagline: String = "",
 
     @SerializedName("first_brewed")
-    val firstBrewed: String? = null,
+    val firstBrewed: String = "",
 
     @SerializedName("description")
-    val description: String? = null,
+    val description: String = "",
 
     @SerializedName("image_url")
-    val imageUrl: String? = null,
+    val imageUrl: String = "",
 
     @SerializedName("abv")
-    val abv: Float? = null,
+    val abv: Float = 0F,
 
     @SerializedName("ibu")
-    val ibu: Float? = null,
+    val ibu: Float = 0F,
 
     @SerializedName("target_fg")
-    val targetFg: Float? = null,
+    val targetFg: Float = 0F,
 
     @SerializedName("target_og")
-    val targetOg: Float? = null,
+    val targetOg: Float = 0F,
 
     @SerializedName("ebc")
-    val ebc: Float? = null,
+    val ebc: Float = 0F,
 
     @SerializedName("srm")
-    val srm: Float? = null,
+    val srm: Float = 0F,
 
     @SerializedName("ph")
-    val ph: Float? = null,
+    val ph: Float = 0F,
 
     @SerializedName("attenuation_level")
-    val attenuationLevel: Float? = null,
+    val attenuationLevel: Float = 0F,
 
     @SerializedName("volume")
-    val volume: Volume? = null,
+    val volume: Volume,
 
     @SerializedName("boil_volume")
-    val boilVolume: BoilVolume? = null,
+    val boilVolume: BoilVolume,
 
     @SerializedName("method")
     @Expose
-    val method: Method? = null,
+    val method: Method,
 
     @SerializedName("ingredients")
-    val ingredients: Ingredients? = null,
+    val ingredients: Ingredients,
 
     @SerializedName("food_pairing")
-    val foodPairing: List<String>? = null,
+    val foodPairing: List<String>,
 
     @SerializedName("brewers_tips")
-    val brewersTips: String? = null,
+    val brewersTips: String = "",
 
     @SerializedName("contributed_by")
-    val contributedBy: String? = null
+    val contributedBy: String = ""
 
 ) {
     var foodDataBase: String = ""
